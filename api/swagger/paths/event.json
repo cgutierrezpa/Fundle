@@ -35,5 +35,48 @@
         }
       }
     }
+  },
+  "UpdateEvent": {
+    "tags": [
+      "Event"
+    ],
+    "description": "Updates a event",
+    "operationId": "updateEvent",
+    "security": [
+      {
+        "Authorization": []
+      }
+    ],
+    "parameters": [
+      {
+        "in": "body",
+        "name": "body",
+        "description": "Updates the event passed in the body",
+        "required": true,
+        "schema": {
+          "$ref": "../definitions/event.json#/UpdateEvent"
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+          "$ref": "../definitions/generic.json#/UpdateResponse"
+        }
+      },
+      "404": {
+        "description": "Event not found",
+        "schema": {
+          "$ref": "../definitions/error.json#/ErrorResponse"
+        }
+      },
+      "500": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../definitions/error.json#/ErrorResponse"
+        }
+      }
+    }
   }
 }

@@ -71,7 +71,18 @@
       "$ref": "event.json#/CreateEvent"
     }
   },
-
+  "/event/update": {
+    "x-swagger-router-controller": "event",
+    "put": {
+      "$ref": "event.json#/UpdateEvent"
+    }
+  },
+  "/event/description": {
+    "x-swagger-router-controller": "event",
+    "put": {
+      "$ref": "event.json#/UpdateEventDescription"
+    }
+  },
   "/swagger": {
     "x-swagger-pipe": "swagger_raw"
   }

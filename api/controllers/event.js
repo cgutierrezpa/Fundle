@@ -68,13 +68,12 @@ module.exports = {
 		});
 	},
 
-	updateService: function(req, res){
-		console.log(req.swagger);
-		db.get().queryAsync('UPDATE ' +  db.tables.service +' SET ? WHERE _id = ? AND fk_promoter = ?',
+	updateEvent: function(req, res){
+		db.get().queryAsync('UPDATE ' +  db.tables.event +' SET ? WHERE _id = ? AND fk_promoter = ?',
 			[req.swagger.params.body.value, req.swagger.params.body.value._id, req.authInfo._id])
 		.then(function(result){
 			if(result.affectedRows == 0){
-				return res.status(404).json({"message": "Service not found."});
+				return res.status(404).json({"message": "Event not found."});
 			}
 			return res.status(200).json(result);
 		})
@@ -83,14 +82,14 @@ module.exports = {
 		});
 	},
 
-	updateServiceDescription : function(req, res){
+	updateEventDescription : function(req, res){
 		db.get().queryAsync('UPDATE ' + db.tables.event_description + ' AS description ' +
-			'JOIN ' + db.tables.service + ' AS service ON description.fk_agency_service = service._id ' +
-			'SET ? WHERE service.fk_promoter = ? AND service._id = ?',
-			[req.swagger.params.body.value, req.authInfo._id, req.swagger.params.body.value.fk_agency_service])
+			'JOIN ' + db.tables.event + ' AS event ON description.fk_agency_event = event._id ' +
+			'SET ? WHERE event.fk_promoter = ? AND event._id = ?',
+			[req.swagger.params.body.value, req.authInfo._id, req.swagger.params.body.value.fk_event])
 		.then(function(result){
 			if(result.affectedRows == 0){
-				return res.status(404).json({"message": "Service not found."});
+				return res.status(404).json({"message": "Event not found."});
 			}
 			return res.status(200).json(result);
 		})

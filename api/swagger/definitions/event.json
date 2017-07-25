@@ -150,41 +150,103 @@
       }
     }
   },
-  "UpdateService": {
+  "UpdateEvent": {
     "type": "object",
     "required": [
       "_id"
     ],
+    "additionalProperties": false,
     "properties": {
       "_id": {
         "type": "integer",
         "format": "uint32",
         "example": 2
       },
-      "tx_cif": {
+      "tx_title": {
         "type": "string",
-        "example": "A05732B"
+        "example": "Holirun in Boadilla"
       },
-      "tx_name": {
-        "type": "string",
-        "example": "Test service"
+      "tx_short_description": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "example": "Come and run in Boadilla!"
       },
-      "fk_headquarters": {
+      "fk_place": {
         "type": "integer",
         "format": "uint32",
         "example": 1
+      },
+      "n_seating": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "format": "uint32",
+        "example": 50
       },
       "url_main_image": {
         "type": [
           "string",
           "null"
-        ]
+        ],
+        "example": "url-image.com/main"
       },
       "url_main_video": {
         "type": [
           "string",
           "null"
-        ]
+        ],
+        "example": "url-video.com/main"
+      },
+      "dt_start_funding": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time",
+        "example": "2017-07-07T17:17:00.000Z"
+      },
+      "dt_end_funding": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time",
+        "example": "2017-07-07T17:17:00.000Z"
+      },
+      "dt_event_start_time": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time",
+        "example": "2017-07-07T17:17:00.000Z"
+      },
+      "dt_event_end_time": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time",
+        "example": "2017-07-07T17:17:00.000Z"
+      },
+      "n_current_funding": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "format": "uint32",
+        "example": 0
+      },
+      "n_target_funding": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "format": "uint32",
+        "example": 50000
       }
     }
   },
