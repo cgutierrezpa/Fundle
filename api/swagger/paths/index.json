@@ -65,6 +65,12 @@
       "$ref": "authentication.json#/ActivateUser"
     }
   },
+  "/event": {
+    "x-swagger-router-controller": "event",
+    "post": {
+      "$ref": "event.json#/CreateEvent"
+    }
+  },
 
   "/swagger": {
     "x-swagger-pipe": "swagger_raw"

@@ -40,5 +40,8 @@
     },
     "UpdateResponse": {
     	"$ref" : "generic.json#/UpdateResponse"
-    }
+    },
+    "Event" : {
+		"$ref" : "event.json#/Event"
+	}
 }

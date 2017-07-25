@@ -1,0 +1,224 @@
+{
+  "EventsArray": {
+    "type": "array",
+    "items": {
+      "$ref": "#/FetchedService"
+    }
+  },
+  "FetchedEvent": {
+    "type": "object",
+    "required": [
+      "_id",
+      "tx_name"
+    ],
+    "properties": {
+      "_id": {
+        "type": "integer",
+        "format": "uint32",
+        "example": 2
+      },
+      "tx_cif": {
+        "type": "string",
+        "example": "A05732B"
+      },
+      "fk_provider": {
+        "type": "integer",
+        "format": "uint32",
+        "example": 1
+      },
+      "tx_name": {
+        "type": "string",
+        "example": "Test service"
+      },
+      "fk_headquarters": {
+        "type": "integer",
+        "format": "uint32",
+        "example": 1
+      },
+      "url_main_image": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "url_main_video": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "n_rating": {
+        "type": "number",
+        "format": "double",
+        "example": 3.8
+      }
+    }
+  },
+  "Event": {
+    "type": "object",
+    "required": [
+      "tx_title",
+      "fk_place"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "tx_title": {
+        "type": "string",
+        "example": "Holirun in Boadilla"
+      },
+      "tx_short_description": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "example": "Come and run in Boadilla!"
+      },
+      "fk_place": {
+        "type": "integer",
+        "format": "uint32",
+        "example": 1
+      },
+      "n_seating": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "format": "uint32",
+        "example": 50
+      },
+      "url_main_image": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "example": "url-image.com/main"
+      },
+      "url_main_video": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "example": "url-video.com/main"
+      },
+      "dt_start_funding": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time",
+        "example": "2017-07-07T17:17:00.000Z"
+      },
+      "dt_end_funding": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time",
+        "example": "2017-07-07T17:17:00.000Z"
+      },
+      "dt_event_start_time": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time",
+        "example": "2017-07-07T17:17:00.000Z"
+      },
+      "dt_event_end_time": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time",
+        "example": "2017-07-07T17:17:00.000Z"
+      },
+      "n_current_funding": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "format": "uint32",
+        "example": 0
+      },
+      "n_target_funding": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "format": "uint32",
+        "example": 50000
+      }
+    }
+  },
+  "UpdateService": {
+    "type": "object",
+    "required": [
+      "_id"
+    ],
+    "properties": {
+      "_id": {
+        "type": "integer",
+        "format": "uint32",
+        "example": 2
+      },
+      "tx_cif": {
+        "type": "string",
+        "example": "A05732B"
+      },
+      "tx_name": {
+        "type": "string",
+        "example": "Test service"
+      },
+      "fk_headquarters": {
+        "type": "integer",
+        "format": "uint32",
+        "example": 1
+      },
+      "url_main_image": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "url_main_video": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    }
+  },
+  "UpdateServiceDescription": {
+    "type": "object",
+    "required": [
+      "fk_agency_service",
+      "tx_description"
+    ],
+    "properties": {
+      "fk_agency_service": {
+        "type": "integer",
+        "format": "uint32",
+        "example": 1
+      },
+      "tx_description": {
+        "type": "string",
+        "example": "This is a description"
+      }
+    }
+  },
+  "CreateEventResponse": {
+    "type": "object",
+    "required": [
+      "eventId"
+    ],
+    "properties": {
+      "eventId": {
+        "type": "integer",
+        "format": "uint32"
+      }
+    }
+  },
+  "UpdateServiceResponse": {
+    "type": "object"
+  }
+}

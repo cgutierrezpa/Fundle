@@ -1,0 +1,39 @@
+{
+  "CreateEvent": {
+    "tags": [
+      "Event"
+    ],
+    "description": "Creates an event",
+    "operationId": "createEvent",
+    "security": [
+      {
+        "Authorization": []
+      }
+    ],
+    "parameters": [
+      {
+        "in": "body",
+        "name": "body",
+        "description": "Event object that needs to be added to the database",
+        "required": true,
+        "schema": {
+          "$ref": "../definitions/event.json#/Event"
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+          "$ref": "../definitions/event.json#/CreateEventResponse"
+        }
+      },
+      "500": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../definitions/error.json#/ErrorResponse"
+        }
+      }
+    }
+  }
+}
