@@ -1,7 +1,6 @@
 let db = require('../../lib/db.js'),
-	errorHandler = require('../../lib/errorHandler.js'),
-	bcrypt = require('bcrypt');
-
+	errorHandler = require('../../lib/errorHandler.js');
+	
 module.exports = {
 	/* Public methods */
 /*
