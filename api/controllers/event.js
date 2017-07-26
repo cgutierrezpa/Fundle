@@ -84,7 +84,7 @@ module.exports = {
 
 	updateEventDescription : function(req, res){
 		db.get().queryAsync('UPDATE ' + db.tables.event_description + ' AS description ' +
-			'JOIN ' + db.tables.event + ' AS event ON description.fk_agency_event = event._id ' +
+			'JOIN ' + db.tables.event + ' AS event ON description.fk_event = event._id ' +
 			'SET ? WHERE event.fk_promoter = ? AND event._id = ?',
 			[req.swagger.params.body.value, req.authInfo._id, req.swagger.params.body.value.fk_event])
 		.then(function(result){
