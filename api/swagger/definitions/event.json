@@ -2,7 +2,7 @@
   "EventsArray": {
     "type": "array",
     "items": {
-      "$ref": "#/FetchedService"
+      "$ref": "#/FetchedEvent"
     }
   },
   "FetchedEvent": {
@@ -28,7 +28,7 @@
       },
       "tx_name": {
         "type": "string",
-        "example": "Test service"
+        "example": "Test event"
       },
       "fk_headquarters": {
         "type": "integer",
@@ -250,14 +250,15 @@
       }
     }
   },
-  "UpdateServiceDescription": {
+  "UpdateEventDescription": {
     "type": "object",
     "required": [
-      "fk_agency_service",
+      "fk_event",
       "tx_description"
     ],
+    "additionalProperties": false,
     "properties": {
-      "fk_agency_service": {
+      "fk_event": {
         "type": "integer",
         "format": "uint32",
         "example": 1
@@ -280,7 +281,7 @@
       }
     }
   },
-  "UpdateServiceResponse": {
+  "UpdateEventResponse": {
     "type": "object"
   }
 }
